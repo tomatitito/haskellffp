@@ -33,3 +33,15 @@ hypothetical2 a b = b
 -- will not compile:
 --hypothetical3 :: a -> a -> a
 --hypothetical3 a b = a + b
+
+
+{-
+3. Implement a -> b -> b. How many implementations can it
+have? Does the behavior change when the types of a and b
+change?
+-}
+
+hypothetical4 :: a -> b -> b
+hypothetical4 a b = b
+
+-- this should be the only possible implementation
