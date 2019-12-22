@@ -11,7 +11,8 @@ should try it anyway.
 
 impossible :: a -> a
 impossible a = a + 1
--- is actually possible, but the type signature is changed to Num a => a -> a
+-- is actually possible to type the above signature into the repl. In that case the type signature
+-- is changed to Num a => a -> a. However, compiling fails.
 
 
 {-
