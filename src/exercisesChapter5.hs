@@ -22,7 +22,7 @@ above.
 -}
 
 hypothetical1 :: a -> a -> a
-hypothethical = undefined
+hypothetical = undefined
 
 hypothetical2 :: a -> a -> a
 hypothetical2 = undefined
