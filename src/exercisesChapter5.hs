@@ -9,8 +9,8 @@ other than returning the same value. This is impossible, but you
 should try it anyway.
 -}
 
-impossible :: a -> a
-impossible a = a + 1
+--impossible :: a -> a
+--impossible a = a + 1
 -- is actually possible to type the above signature into the repl. In that case the type signature
 -- is changed to Num a => a -> a. However, compiling fails.
 
@@ -25,7 +25,11 @@ above.
 -}
 
 hypothetical1 :: a -> a -> a
-hypothetical = undefined
+hypothetical1 a b = a
 
 hypothetical2 :: a -> a -> a
-hypothetical2 = undefined
+hypothetical2 a b = b
+
+-- will not compile:
+--hypothetical3 :: a -> a -> a
+--hypothetical3 a b = a + b
