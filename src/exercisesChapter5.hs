@@ -1,3 +1,5 @@
+module ExercisesChapter5 where
+
 -- Exercises Parametricity
 
 {-
