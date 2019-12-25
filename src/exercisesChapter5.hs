@@ -75,7 +75,7 @@ ans2 = w
     x = 5
     y = x + 5
     w = y * 10
-  
+
 -- What is the type of w?
 
 -- 3. Given
@@ -98,10 +98,38 @@ ans4 = f
 
 -- 5. Given
 ans5 = f
-  where 
-    x = "Julie" 
+  where
+    x = "Julie"
     y = " <3 "
     z = "Haskell"
     f = x ++ y ++ z
 
 -- What is the type of f?
+
+-- Does it compile? (dic)
+-- Everything commented out doesn't.
+
+{- 
+bignum = (^) 5 $ 10
+wahoo = bignum $ 10
+-}
+
+dic2 = z
+  where
+    x = print
+    y = print "whoohoo!"
+    z = x "hello world"
+    
+{-
+dic3 = d
+  where
+    a = (+)
+    b = 5
+    c = b 10
+    d = c 200
+-}
+
+{- Variable not in scope: cc
+aa = 12 + bb 
+bb = 10000 * cc
+-}
