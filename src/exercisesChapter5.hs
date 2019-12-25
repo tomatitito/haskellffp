@@ -1,3 +1,5 @@
+{-# LANGUAGE NoMonomorphismRestriction #-}
+
 module ExercisesChapter5 where
 
 -- Exercises Parametricity
@@ -45,3 +47,61 @@ hypothetical4 :: a -> b -> b
 hypothetical4 a b = b
 
 -- this should be the only possible implementation
+
+-- determine the type
+
+{-
+1. All function applications return a value. Determine the value
+returned by these function applications and the type of that
+value.
+-}
+
+a = (* 9 ) 6
+
+b = head [(0, "doge"), (1, "kitteh")]
+
+c = head [(0 :: Integer ,"doge"),(1,"kitteh")]
+
+d = if False then True else False
+
+e = length [1, 2, 3, 4, 5]
+
+f = (length [1, 2, 3, 4]) > (length "TACOCAT")
+
+
+-- 2. Given
+ans2 = w
+  where
+    x = 5
+    y = x + 5
+    w = y * 10
+  
+-- What is the type of w?
+
+-- 3. Given
+ans3 = z
+  where
+    x = 5
+    y = x + 5
+    z y = y * 10
+
+-- What is the type of z?
+
+-- 4. Given
+ans4 = f
+  where
+    x = 5
+    y = x + 5
+    f = 4 / y
+
+-- What is the type of f4?
+
+-- 5. Given
+ans5 = f
+  where 
+    x = "Julie" 
+    y = " <3 "
+    z = "Haskell"
+    f = x ++ y ++ z
+
+-- What is the type of f?
