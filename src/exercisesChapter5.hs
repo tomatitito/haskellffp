@@ -48,7 +48,7 @@ hypothetical4 a b = b
 
 -- this should be the only possible implementation
 
--- determine the type
+-- Determine the type
 
 {-
 1. All function applications return a value. Determine the value
@@ -132,4 +132,39 @@ dic3 = d
 {- Variable not in scope: cc
 aa = 12 + bb 
 bb = 10000 * cc
+-}
+
+-- Type variable or specific type constructor?
+
+{-
+1. You will be shown a type declaration, and you should categorize
+each type. The choices are a fully polymorphic type variable,
+constrained polymorphic type variable, or concrete type constructor.
+
+f :: Num a => a -> b -> Int -> Int
+  --         [0]  [1]   [2]    [3]
+  Here, the answer would be: constrained polymorphic (Num) ([0]),
+  fully polymorphic ([1]), and concrete ([2] and [3]).
+-}
+
+{-
+2.
+f :: zed -> Zed -> Blah
+     [0]    [1]    [2]
+  [0] is a fully polymorphic type, [1] and [2] are concrete types.
+-}
+
+{-
+3. 
+f :: Enum b => a -> b -> C
+     [0]       [1]  [2]  [3]
+[0] is a constrained polymorphic type, as is [2]. [1] is fully polymorphic,
+[3] is a concrete type.
+-}
+
+{-
+4. 
+f :: f -> g -> C
+     [0]  [1]  [2]
+[0] is a function so it should be concrete, [1] is fully polymorphic, [2] is concrete.
 -}
