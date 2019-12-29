@@ -187,3 +187,50 @@ functionC x y =
 
 functionS :: (a, b) -> b 
 functionS (x, y) = y
+
+
+-- Given a type, write a function 
+
+{-
+1. There is only one function definition that typechecks and doesn’t
+go into an infinite loop when you run it.
+-}
+i :: a -> a
+i a = a
+
+-- 2. There is only one version that works.
+given_the_type_c :: a -> b -> a
+given_the_type_c x y = x
+
+{-
+3. Given alpha equivalence are c'' and c (see above) the same
+thing?
+-}
+c'' :: b -> a -> b
+c'' = given_the_type_c
+
+-- 4. Only one version that works.
+c' :: a -> b -> b
+c' x y = y
+
+{-
+5. There are multiple possibilities, at least two of which you’ve
+seen in previous chapters.
+-}
+r :: [a] -> [a]
+r l = l
+
+{-
+6. Only one version that will typecheck.
+-}
+co :: (b -> c) -> (a -> b) -> a -> c
+co bToc aTob a= 
+  (bToc (aTob a))
+ 
+-- 7. Only one version will typecheck. 
+given_the_type_7 :: (a -> c) -> a -> a
+given_the_type_7 f a = a 
+
+-- 8. One version will typecheck.
+a' :: (a -> b) -> a -> b
+a' aTob a = aTob a
