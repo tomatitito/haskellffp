@@ -168,3 +168,22 @@ f :: f -> g -> C
      [0]  [1]  [2]
 [0] is a function so it should be concrete, [1] is fully polymorphic, [2] is concrete.
 -}
+
+
+-- Write a type signature
+{-
+For the following expressions, please add a type signature. You should
+be able to rely on GHCi type inference to check your work, although
+you might not have precisely the same answer as GHCi gives (due to
+polymorphism, etc).
+-}
+
+functionH :: [a] -> a
+functionH (x:_) = x
+
+functionC :: (Ord a) => a -> a -> Bool
+functionC x y = 
+  if (x > y) then True else False
+
+functionS :: (a, b) -> b 
+functionS (x, y) = y
