@@ -1,6 +1,6 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
 
-module ExercisesChapter5 where
+module Chapter5 where
 
 -- Exercises Parametricity
 
@@ -234,3 +234,70 @@ given_the_type_7 f a = a
 -- 8. One version will typecheck.
 a' :: (a -> b) -> a -> b
 a' aTob a = aTob a
+
+
+-- Type-kwon-do
+
+{-
+1.
+
+f :: Int -> String
+f = undefined
+
+g :: String -> Char
+g = undefined
+
+h :: Int -> Char
+h x = g $ f x 
+-}
+
+{-
+2.
+
+data A
+data B
+data C
+
+q :: A -> B
+q = undefined
+
+w :: B -> C
+w = undefined
+
+e :: A -> C
+e x = w $ q x
+-}
+
+
+{-
+3.
+
+data X
+data Y
+data Z
+
+xz :: X -> Z
+xz = undefined
+
+yz :: Y -> Z
+yz = undefined
+
+xform :: (X, Y) -> (Z, Z)
+xform (x, y) = ((xz x), (yz y))
+-}
+
+{-
+4. 
+
+munge :: (x -> y)
+      -> (y -> (w, z))
+      -> x
+      -> w
+munge xy ywz x = fst (ywz (xy x))
+
+Function application is left associative. Therefore this is equivalent to the above:
+    munge xy ywz x = fst (ywz $ xy x)
+while this is not
+    munge xy ywz x = fst (ywz xy x)
+-}
+munge xy ywz x = fst ywz (xy x)
