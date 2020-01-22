@@ -1,4 +1,4 @@
-module ExercisesChapter4 where
+module Chapter4 where
 
 isPalindrome :: (Eq a) => [a] -> Bool
 isPalindrome l =

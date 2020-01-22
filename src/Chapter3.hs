@@ -1,4 +1,4 @@
-module ExercisesChapter3 where
+module Chapter3 where
 
 -- Building functions 1
 -- Now write expressions to perform the following transformations, just with the functions you’ve seen in this chapter.
