@@ -1,9 +1,21 @@
+{-# LANGUAGE InstanceSigs #-}
+
+
 module Ch22Reader where
 
 import Test.Hspec
+import Control.Monad.Reader
 import Control.Applicative (liftA2)
 import Control.Monad (return)
 import Data.Char
+
+
+--newtype Reader r a =
+--  Reader { runReader :: r -> a }
+--
+--instance Functor (Reader r) where
+--  fmap :: (a -> b) -> Reader r a -> Reader r b
+--  fmap f r = Reader r ( f (runReader r))
 
 boop = (*2)
 doop = (+10)
@@ -37,6 +49,22 @@ tupled' :: [Char] -> ([Char], [Char])
 tupled' xs =
   return (cap xs) >>= \x -> (x, rev xs)
 
+myLiftA2 :: Applicative f =>
+            (a -> b -> c)
+         -> f a -> f b -> f c
+myLiftA2 fun x y =
+  fun <$> x <*> y
+
+--instance Applicative (Reader r) where
+--  pure :: a -> Reader r a
+--  pure a = Reader $ \_ -> a
+--
+--  (<*>) :: Reader r (a -> b)
+--        -> Reader r a
+--        -> Reader r b
+--  (Reader rab) <*> (Reader ra) =
+--    Reader $ \r -> rab ra
+
 
 main :: IO ()
 main = hspec $ do
@@ -52,4 +80,27 @@ main = hspec $ do
     it "tupled is identical to tupled' " $ do
       (tupled "kornelia") `shouldBe` (tupled' "kornelia")
 
+  describe "Exercise: Reading Comprehensions" $ do
+    it "myLiftA2 is identical to liftA2" $ do
+      myLiftA2 (+) (Just 32) (Just 42) `shouldBe` liftA2 (+) (Just 32) (Just 42)
+
+  describe "Making a Reader" $ do
+  
+    it "running a Reader is calling a function on an environment" $ do
+      (runReader r1) env `shouldBe` 42
+     
+     -- does not work, why? 
+--    it "asking from the environment" $ do
+--      let asked = ask r2
+--      asked `shouldBe` "some environment"
+      
+      
+    where r1 = return 42 :: Reader String Int
+    
+          r2 :: Reader String Int
+          r2 = do
+            env <- ask
+            return 42
+          
+          env = "some environment"
 
