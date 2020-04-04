@@ -27,4 +27,6 @@ instance EqProp Bull where
   (=-=) = eq
 
 main:: IO ()
-main = quickBatch (monoid Twoo)
+main = do
+  quickBatch (monoid Twoo)
+  quickBatch (semigroup (Fools, 5 :: Int))
