@@ -16,6 +16,7 @@ instance Arbitrary Bull where
 instance Semigroup Bull where
   (<>) = mappend
   
+-- with this implementation it's not a bad monoid anymore
 instance Monoid Bull where
   mempty = Fools
   mappend Fools Fools = Fools
