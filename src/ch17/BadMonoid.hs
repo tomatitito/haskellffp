@@ -18,7 +18,9 @@ instance Semigroup Bull where
   
 instance Monoid Bull where
   mempty = Fools
-  mappend _ _ = Fools
+  mappend Fools Fools = Fools
+  mappend Fools Twoo = Twoo
+  mappend Twoo _ = Twoo
 
 -- EqProp is from the checkers library
 instance EqProp Bull where
