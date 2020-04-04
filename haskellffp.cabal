@@ -39,6 +39,8 @@ library
       src
       src/ch02
       src/ch03
+      src/ch04
+      src/ch05
       src/ch17
   build-depends:
       base >=4.7 && <5
