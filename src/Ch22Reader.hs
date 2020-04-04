@@ -89,18 +89,23 @@ main = hspec $ do
     it "running a Reader is calling a function on an environment" $ do
       (runReader r1) env `shouldBe` 42
      
-     -- does not work, why? 
---    it "asking from the environment" $ do
---      let asked = ask r2
---      asked `shouldBe` "some environment"
+    it "asking for the environment" $ do
+      let asked = runReader r3 env
+      asked `shouldBe` "some environment"
       
       
     where r1 = return 42 :: Reader String Int
     
-          r2 :: Reader String Int
+          r2 :: Reader String String
           r2 = do
             env <- ask
-            return 42
+            return env
+          
+          r3 :: Reader String String
+          r3 = ask
+          
+          r4 :: Reader String String
+          r4 = ask >>= return 
           
           env = "some environment"
 
