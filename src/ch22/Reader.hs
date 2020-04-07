@@ -1,7 +1,7 @@
 {-# LANGUAGE InstanceSigs #-}
 
 
-module Ch22Reader where
+module Reader where
 
 import Test.Hspec
 import Control.Monad.Reader

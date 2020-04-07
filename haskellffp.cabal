@@ -27,12 +27,13 @@ source-repository head
 
 library
   exposed-modules:
-      Ch22Reader
       Ch23State
       Lib
       TopOrLocal
       BadMonoid
       Apl1
+      Reader
+      State
   other-modules:
       Paths_haskellffp
   hs-source-dirs:
@@ -42,6 +43,9 @@ library
       src/ch04
       src/ch05
       src/ch17
+      src/ch18
+      src/ch22
+      src/ch23
   build-depends:
       base >=4.7 && <5
     , hspec
