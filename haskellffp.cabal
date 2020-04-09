@@ -32,6 +32,7 @@ library
       TopOrLocal
       BadMonoid
       BadMonad
+      MonadInstances
       Apl1
       Reader
       State
