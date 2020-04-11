@@ -1,3 +1,5 @@
+module Chapter2 where
+
 z = 7
 
 waxOn = x * 5
