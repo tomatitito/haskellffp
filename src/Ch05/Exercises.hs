@@ -1,6 +1,6 @@
 {-# LANGUAGE NoMonomorphismRestriction #-}
 
-module Chapter5 where
+module Ch05.Exercises where
 
 -- Exercises Parametricity
 

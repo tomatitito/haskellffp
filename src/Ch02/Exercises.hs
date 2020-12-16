@@ -1,4 +1,4 @@
-module Chapter2 where
+module Ch02.Exercises where
 
 z = 7
 

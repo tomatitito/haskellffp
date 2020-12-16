@@ -1,4 +1,4 @@
-module Sing where
+module Ch05.Sing where
 
 
 fstString :: [Char] -> [Char]
