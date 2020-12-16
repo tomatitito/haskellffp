@@ -1,4 +1,4 @@
-module State where
+module Ch23.State where
 
 import Control.Applicative (liftA3)
 import Control.Monad (replicateM)

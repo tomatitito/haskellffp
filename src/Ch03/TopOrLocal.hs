@@ -1,4 +1,4 @@
-module TopOrLocal where
+module Ch03.TopOrLocal where
 
 topLevelFunction :: Integer -> Integer
 topLevelFunction x =

@@ -1,7 +1,7 @@
 module Main where
 
 import Lib
-import Lookups
+import Ch21.Exercises
 
 main :: IO ()
-main = someFunc
+main = run

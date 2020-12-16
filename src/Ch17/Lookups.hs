@@ -1,4 +1,4 @@
-module Lookups where
+module Ch17.Lookups where
 
 import Control.Applicative (liftA, liftA2)
 import Data.List (elemIndex)

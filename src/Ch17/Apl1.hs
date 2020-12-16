@@ -1,4 +1,4 @@
-module Apl1 where
+module Ch17.Apl1 where
 
 import Control.Applicative
 import Data.Monoid

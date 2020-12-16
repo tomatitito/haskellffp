@@ -1,4 +1,4 @@
-module BadMonad where
+module Ch18.BadMonad where
 
 import Test.QuickCheck
 import Test.QuickCheck.Checkers

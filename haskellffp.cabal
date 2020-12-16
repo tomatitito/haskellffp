@@ -27,27 +27,14 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
-      TopOrLocal
-      BadMonoid
-      BadMonad
-      MonadInstances
-      Apl1
-      Reader
-      State
-      Lookups
+      Ch03.TopOrLocal
+      Ch18.BadMonad
+      Ch18.MonadInstances
+      Ch21.Exercises
   other-modules:
       Paths_haskellffp
   hs-source-dirs:
       src
-      src/ch02
-      src/ch03
-      src/ch04
-      src/ch05
-      src/ch17
-      src/ch18
-      src/ch22
-      src/ch23
   build-depends:
       base >=4.7 && <5
     , hspec

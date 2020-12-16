@@ -1,4 +1,4 @@
-module MonadInstances where
+module Ch18.MonadInstances where
 
 import Test.QuickCheck
 import Test.QuickCheck.Checkers

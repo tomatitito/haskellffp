@@ -1,4 +1,4 @@
-module BadMonoid where
+module Ch17.BadMonoid where
 
 import Data.Monoid
 import Data.Semigroup

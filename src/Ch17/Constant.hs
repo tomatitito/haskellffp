@@ -1,4 +1,4 @@
-module Constant where
+module Ch17.Constant where
 
 newtype Constant a b =
   Constant { getConstant :: a } -- b is ghost, it does only appear in the constructor

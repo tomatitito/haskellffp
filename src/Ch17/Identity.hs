@@ -1,4 +1,4 @@
-module Identity where
+module Ch17.Identity where
 
 newtype Identity a = Identity a
   deriving (Eq, Ord, Show)
