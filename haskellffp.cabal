@@ -31,6 +31,8 @@ library
       Ch18.BadMonad
       Ch18.MonadInstances
       Ch21.Exercises
+      Ch23.Understate
+      Ch25.Twinplicative
   other-modules:
       Paths_haskellffp
   hs-source-dirs:
