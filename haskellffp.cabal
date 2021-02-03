@@ -33,6 +33,7 @@ library
       Ch21.Exercises
       Ch23.Understate
       Ch25.Twinplicative
+      Ch26.Examples
   other-modules:
       Paths_haskellffp
   hs-source-dirs:
