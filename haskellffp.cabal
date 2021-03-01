@@ -48,6 +48,9 @@ library
     , transformers
     , QuickCheck
     , checkers
+    , bytestring
+    , text
+    , network-uri
   default-language: Haskell2010
 
 executable haskellffp-exe
