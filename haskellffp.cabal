@@ -31,6 +31,8 @@ library
       Ch18.BadMonad
       Ch18.MonadInstances
       Ch21.Exercises
+      Ch22.Reader
+      Ch22.ReaderPractise
       Ch23.Understate
       Ch25.Twinplicative
       Ch26.Examples
